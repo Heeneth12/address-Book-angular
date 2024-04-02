@@ -1,4 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { response } from 'express';
 
 @Component({
   selector: 'app-address-book',
@@ -6,30 +9,36 @@ import { Component } from '@angular/core';
   styleUrl: './address-book.component.css',
 })
 export class AddressBookComponent {
-  data: any = [
-    {
-      fullName: 'HEENETH SAI',
-      address: '7/74/A SN puram Marver Road',
-      city: 'Mumbai',
-      state: 'Maharashtra',
-      zipCode: '517501',
-      phoneNumber: 9885701141,
-    },
-    {
-      fullName: 'John Doe',
-      address: '123 Main St',
-      city: 'New York',
-      state: 'NY',
-      zipCode: '10001',
-      phoneNumber: 1234567890,
-    },
-    {
-      fullName: 'Jane Smith',
-      address: '456 Elm St',
-      city: 'Los Angeles',
-      state: 'CA',
-      zipCode: '90001',
-      phoneNumber: 9876543210,
-    },
-  ];
+  data: any;
+  deletionMessage: string = '';
+
+  constructor(private http: HttpClient, private router: Router) {}
+
+  ngOnInit(): void {
+    this.getAddress();
+  }
+
+  getAddress() {
+    const url = 'http://localhost:8080/addressBook/get';
+
+    this.http.get<any>(url).subscribe((response) => {
+      console.log(response);
+      this.data = response;
+    });
+  }
+
+  deleteAddress(id: any) {
+    const url = 'http://localhost:8080/addressBook/delete/' + id;
+    this.http.delete(url, { responseType: 'text' }).subscribe(
+      (response) => {
+        console.log(response);
+        this.deletionMessage = response; // Store the deletion message
+        this.getAddress(); // Optionally, fetch updated data after deletion
+      },
+      (error) => {
+        console.error('Error occurred:', error);
+        this.deletionMessage = ''; // Reset deletion message on error
+      }
+    );
+  }
 }

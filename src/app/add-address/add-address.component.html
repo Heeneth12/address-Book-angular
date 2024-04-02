@@ -2,11 +2,12 @@
 <div class="center-container">
   <div class="container rounded-lg">
     <div class="form-head flex items-center">
+      <div></div>
       <div>
         <h1 class="h1">PERSON ADDRESS FORM</h1>
       </div>
       <div>
-        <button class="button">
+        <button class="buttonSvg">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -22,24 +23,24 @@
         </button>
       </div>
     </div>
-    <form class="flex-form">
+    <form class="flex-form" [formGroup]="addressData">
       <div class="px-20 pt-8">
         <label for="fullname"> Full Name</label>
-        <input type="text" id="fullname" />
+        <input type="text" id="fullname" formControlName="fullName" />
       </div>
       <div class="px-20 pt-4">
         <label for="phonenumber"> Phone Number</label>
-        <input type="text" id="phonenumber" />
+        <input type="number" id="phonenumber" formControlName="phoneNumber" />
       </div>
       <div class="px-20 pt-4">
         <label for="address">Address</label>
-        <textarea id="address"></textarea>
+        <textarea id="address" formControlName="address"></textarea>
       </div>
-      <div class="flex justify-between px-20 mt-4">
+      <div class="flex justify-between items-center px-20 mt-4">
         <div>
           <label>City</label>
-          <select name="Select City" id="cars">
-            <option value="volvo">Volvo</option>
+          <select formControlName="city">
+            <option value="volvo">Select City</option>
             <option value="saab">Saab</option>
             <option value="mercedes">Mercedes</option>
             <option value="audi">Audi</option>
@@ -47,8 +48,8 @@
         </div>
         <div>
           <label>State</label>
-          <select name="Select State" id="cars">
-            <option value="volvo">Volvo</option>
+          <select formControlName="state">
+            <option value="volvo">Select State</option>
             <option value="saab">Saab</option>
             <option value="mercedes">Mercedes</option>
             <option value="audi">Audi</option>
@@ -56,7 +57,14 @@
         </div>
         <div>
           <label>zipCode</label>
-          <input />
+          <input type="number" formControlName="zipCode" />
+        </div>
+      </div>
+      <div class="flex justify-between px-20 mt-8">
+        <div></div>
+        <div>
+          <button class="button w-32 add" (click)="addAddress()">Add</button>
+          <button class="button w-32">Reset</button>
         </div>
       </div>
     </form>

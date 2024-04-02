@@ -28,7 +28,6 @@
   color: white;
   font-size: larger;
   font-weight: 600;
-  margin-left: 14vh;
 }
 
 input {
@@ -46,12 +45,19 @@ textarea {
   border-radius: 4px;
 }
 
+select {
+  padding: 8px;
+  background-color: white;
+  border: 1px solid #bdbdbd;
+  border-radius: 3px;
+}
+
 label {
   color: #42515f;
   font-weight: 500;
 }
 
-.button {
+.buttonSvg {
   color: white;
 }
 .flex-form {
@@ -67,4 +73,17 @@ label {
 .flex-form input,
 .flex-form textarea {
   display: block; /* Make each label and input element take up the full width */
+}
+
+.button {
+  padding: 8px;
+  
+  background-color: #e2e2e2;
+  border: 1px solid #969696;
+  border-radius: 5px;
+  margin-left: 20px;
+}
+
+.add{
+    
 }
