@@ -1,0 +1,20 @@
+.head {
+  color: #658292;
+  font-weight: bold;
+  grid-template-columns: 1fr 2fr 0.8fr 0.8fr 0.5fr 1fr;
+}
+
+.table {
+  background-color: white;
+  grid-template-columns: 1fr 2fr 0.8fr 0.8fr 0.5fr 1fr;
+  margin-top: 10px;
+  border-radius: 6px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #c8d2d7;
+}
+
+.svg {
+  padding: 4px;
+  color: #658292;
+}

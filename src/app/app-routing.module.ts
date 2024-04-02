@@ -1,10 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AddressBookComponent } from './address-book/address-book.component';
+import { AddAddressComponent } from './add-address/add-address.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: '', component: AddressBookComponent },
+  { path: 'add', component: AddAddressComponent },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

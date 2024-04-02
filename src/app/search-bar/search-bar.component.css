@@ -1,0 +1,18 @@
+.search-bar {
+  background-color: #f7f7f7;
+}
+
+.Person-Details {
+  font-size: x-large;
+  font-weight: bold;
+  color: #42515f;
+}
+
+.button {
+  background-color: #008cff;
+  color: #ffffff;
+  border-radius: 4px;
+}
+.add-user {
+  color: #ffffff;
+}
