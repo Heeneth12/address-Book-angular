@@ -77,13 +77,19 @@ label {
 
 .button {
   padding: 8px;
-  
+
   background-color: #e2e2e2;
   border: 1px solid #969696;
   border-radius: 5px;
   margin-left: 20px;
 }
 
-.add{
-    
+.add:hover {
+  background-color: #008cff;
+  color: white;
+}
+
+.reset:hover {
+  background-color: #969696;
+  color: white;
 }

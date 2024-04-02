@@ -40,4 +40,7 @@ export class EditAddressBookComponent {
         }
       });
   }
+  reloadToHome() {
+    window.location.reload();
+  }
 }

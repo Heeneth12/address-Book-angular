@@ -38,4 +38,11 @@ export class AddAddressComponent {
         }
       );
   }
+
+  backButton() {
+    this.router.navigate(['/']);
+  }
+  resetButton() {
+    window.location.reload();
+  }
 }
