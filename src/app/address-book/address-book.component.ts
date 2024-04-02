@@ -9,6 +9,19 @@ import { response } from 'express';
   styleUrl: './address-book.component.css',
 })
 export class AddressBookComponent {
+  toggle: boolean = false;
+  selectedAddressId: any;
+
+  toggleAddressEditer() {
+    this.toggle = !this.toggle;
+    console.log(this.toggle);
+  }
+
+  getID(id: number) {
+    this.selectedAddressId = id;
+    console.log(this.selectedAddressId);
+  }
+
   data: any;
   deletionMessage: string = '';
 
